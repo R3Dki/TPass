@@ -13,10 +13,12 @@ public class LogModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
-    @Column(name = "log_level")
+    @Column(name = "log_level", nullable = false)
     @Enumerated(EnumType.STRING)
     private LogLevelEnum logLevel;
 
-    @Column(name = "event_time")
+    @Column(name = "event_time", nullable = false)
     private Timestamp eventTime;
+
+    private String description;
 }
